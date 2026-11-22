@@ -1,4 +1,5 @@
 ﻿using Microsoft.EntityFrameworkCore;
+using QuinceaneraEvents.Backend.Entities;
 
 namespace QuinceaneraEvents.Backend.Data
 {
@@ -8,5 +9,7 @@ namespace QuinceaneraEvents.Backend.Data
         {
 
         }
+
+        public DbSet<Contacto> Contactos { get; set; }
     }
 }
