@@ -1,5 +1,6 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using QuinceaneraEvents.Backend.Entities;
+using QuinceaneraEvents.Backend.Configurations;
 
 namespace QuinceaneraEvents.Backend.Data
 {
@@ -11,5 +12,12 @@ namespace QuinceaneraEvents.Backend.Data
         }
 
         public DbSet<Contacto> Contactos { get; set; }
+
+        protected override void OnModelCreating(ModelBuilder modelBuilder)
+        {
+            base.OnModelCreating(modelBuilder);
+
+            modelBuilder.ApplyConfigurationsFromAssembly(typeof(AppDbContext).Assembly);
+        }
     }
 }
