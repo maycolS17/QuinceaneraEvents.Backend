@@ -1,4 +1,6 @@
-﻿namespace QuinceaneraEvents.Backend.DTOs
+﻿using System.ComponentModel.DataAnnotations;
+
+namespace QuinceaneraEvents.Backend.DTOs
 {
     public class CreateContactoDto
     {

@@ -1,5 +1,6 @@
 using Microsoft.EntityFrameworkCore;
 using QuinceaneraEvents.Backend.Data;
+using QuinceaneraEvents.Backend.Services;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -7,9 +8,7 @@ var builder = WebApplication.CreateBuilder(args);
 var connectionsString = builder.Configuration.GetConnectionString("DefaultConnection");
 
 builder.Services.AddDbContext<AppDbContext>(options => options.UseNpgsql(connectionsString));
-
-//prueba temporal de conexion
-//builder.Services.AddHealthChecks().AddDbContextCheck<AppDbContext>();
+builder.Services.AddScoped<ContactoService>();
 
 //Servicios
 builder.Services.AddControllers();
